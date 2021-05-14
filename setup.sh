@@ -1,14 +1,5 @@
 #!/bin/sh
-
-apt-get update && apt-get -y upgrade
-
-apt-get install tor iptables-persistent
-
-wget http://swupdate.openvpn.org/as/openvpn-as-2.1.4-Ubuntu14.amd_64.deb
-dpkg -i openvpn-as-2.1.4-Ubuntu14.amd_64.deb
-
 passwd openvpn
-
 cat >> /etc/tor/torrc <<EOF
 VirtualAddrNetworkIPv4 10.192.0.0/10
 AutomapHostsOnResolve 1
